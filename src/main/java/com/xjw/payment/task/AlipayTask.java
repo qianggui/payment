@@ -1,13 +1,11 @@
 package com.xjw.payment.task;
 
-import com.xjw.payment.entity.OrderInfo;
-import com.xjw.payment.enums.PayType;
+
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.scheduling.annotation.Scheduled;
+
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
-import java.util.List;
+
 
 /**
  * @Author xjw

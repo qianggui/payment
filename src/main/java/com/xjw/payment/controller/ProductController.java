@@ -1,14 +1,18 @@
 package com.xjw.payment.controller;
 
+
+import com.xjw.payment.entity.Product;
+import com.xjw.payment.service.ProductService;
 import com.xjw.payment.vo.Res;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.v3.oas.annotations.Operation;
-import org.springframework.web.bind.annotation.*;
-import springfox.documentation.annotations.ApiIgnore;
+import io.swagger.annotations.ApiOperation;
 
-import java.util.Map;
+import org.springframework.web.bind.annotation.*;
+
+
+import javax.annotation.Resource;
+import java.util.List;
+
 
 /**
  * @Author xjw
@@ -21,14 +25,15 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/product")
 public class ProductController {
-    @Operation(summary = "提交订单")
-    @PostMapping("/order")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "userId", value = "用户id", dataTypeClass = Long.class, paramType = "query", example = "123"),
-            @ApiImplicitParam(name = "goodsId", value = "商品id", dataTypeClass = Integer.class, paramType = "query", example = "1")
-    })
-    public Res toBuy(@ApiIgnore @RequestParam Map<String, String> params) {
-        System.out.println(params);
-        return Res.ok();
+
+    @Resource
+    private ProductService productService;
+    @ApiOperation("商品列表")
+    @GetMapping("/list")
+    public Res list(){
+
+        List<Product> list = productService.list();
+        return Res.ok().data("productList", list);
     }
+
 }

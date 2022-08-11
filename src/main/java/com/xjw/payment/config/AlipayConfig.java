@@ -20,7 +20,7 @@ import javax.annotation.Resource;
 /**
  加载配置文件
  */
-@PropertySource("classpath:alipay-sandbox.properties")
+@PropertySource("classpath:alipay.properties")
 public class AlipayConfig {
     @Resource
     private Environment config;

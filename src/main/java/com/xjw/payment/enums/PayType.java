@@ -12,43 +12,21 @@ import lombok.Getter;
 @Getter
 public enum  PayType {
     /**
-     * 未支付
+     * 微信
      */
-    NOTPAY("未支付"),
+    WXPAY("微信"),
 
 
     /**
-     * 支付成功
+     * 支付宝
      */
-    SUCCESS("支付成功"),
-
-    /**
-     * 已关闭
-     */
-    CLOSED("超时已关闭"),
-
-    /**
-     * 已取消
-     */
-    CANCEL("用户已取消"),
-
-    /**
-     * 退款中
-     */
-    REFUND_PROCESSING("退款中"),
-
-    /**
-     * 已退款
-     */
-    REFUND_SUCCESS("已退款"),
-
-    /**
-     * 退款异常
-     */
-    REFUND_ABNORMAL("退款异常");
+    ALIPAY("支付宝");
 
     /**
      * 类型
      */
     private final String type;
+
+
+
 }

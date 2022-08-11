@@ -3,19 +3,21 @@ server:
 spring:
   application:
     name: payment
-
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
-    time-zone: GMT+8 #ÉèÖÃÊ±Çø
+    time-zone: GMT+8 #è®¾ç½®æ—¶åŒº
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://10.9.1.71:3306/payment_demo?serverTimezone=GMT%2B8&characterEncoding=utf-8
-    username: wlxy
-    password: +Fsa22856762Tla
+    url: jdbc:mysql://localhost:3306/payment?serverTimezone=GMT%2B8&characterEncoding=utf-8
+    username: root
+    password: XJW10053851@
 
 mybatis-plus:
-  configuration: #sqlÈÕÖ¾
+  configuration: #è¿æ¥æ•°æ®åº“
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapper-locations: classpath:com/xjw/payment/mapper/xml/*.xml
 
@@ -25,4 +27,4 @@ logging:
 springfox:
   documentation:
     swagger-ui:
-      enabled: false #¿ª·¢»·¾³ÉèÖÃÎªfalse,ÕıÊ½»·¾³Ê±¸Ä³Étrue
+      enabled: false #ç”Ÿäº§ç¯å¢ƒè®¾ç½®ä¸ºfalse,æ­£å¼ä¸Šçº¿æ—¶æ”¹ä¸ºtrue
